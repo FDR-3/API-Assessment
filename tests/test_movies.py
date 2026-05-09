@@ -1,6 +1,6 @@
 def test_get_popular_movies_status_code(tmdb_client):
   """
-  Test 4: Verify the Popular Movies endpoint returns a 200 OK.
+  Test 4: Verify the "movie/popular" endpoint returns a 200 OK.
   Ensures you can get a list of popular movies.
   """
   response = tmdb_client.get_popular_movies()
@@ -20,7 +20,7 @@ def test_search_movie_by_title(tmdb_client):
 def test_movie_details_structure(tmdb_client):
   """
   Test 6: Verify the schema of a movie details response.
-  Ensures the API contract hasn't changed (presence of key fields).
+  Ensures the response data has the expected fields.
   """
   movie_id = 550 #Fight Club
   response = tmdb_client.get_movie_details(movie_id)

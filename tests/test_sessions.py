@@ -11,7 +11,7 @@ def test_unauthorized_access():
 
 def test_creating_guest_session(tmdb_client):
   """
-  Test 2: Creates a guest session with the authentication/guest_session/new end point.
+  Test 2: Creates a guest session with the "authentication/guest_session/new" end point.
   Ensures guests can create sessions.
   """
   response = tmdb_client.create_guess_session()
@@ -24,7 +24,7 @@ def test_creating_guest_session(tmdb_client):
 def test_deleting_invalid_session_id(tmdb_client):
   """
   Test 3 (Non-Happy Path): Attempt to delete a non-existent session ID.
-  Ensures the API properly validates session tokens and returns 401 Unauthorized.
+  Ensures the API handles invalid session Id's and returns 404 Not Found.
   """
   invalid_session = "this_is_not_a_real_id"
   response = tmdb_client.delete_session(invalid_session)
